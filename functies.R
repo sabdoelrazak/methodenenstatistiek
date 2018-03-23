@@ -28,9 +28,18 @@ Subject1data <- allData[allData$SubjectNr == "1" & allData$partOfExperiment == "
 starttijd_dualtask_easy<-(allData[allData$SubjectNr == "1" &allData$scrabbleCondition=="easy"& allData$partOfExperiment == "dualTask" & allData$LengthOfUserLetterString == "0",]$CurrentTime[1])
 starttijd_dualtask_hard<-(allData[allData$SubjectNr == "1" &allData$scrabbleCondition=="hard"& allData$partOfExperiment == "dualTask" & allData$LengthOfUserLetterString == "0",]$CurrentTime[1])
 
+### Functies Starttijd dualtask -- easy en hard
+funstarttijd_dualtask_easy <- function(x){(allData[allData$SubjectNr == x &allData$scrabbleCondition=="easy"& allData$partOfExperiment == "dualTask" & allData$LengthOfUserLetterString == "0",]$CurrentTime[1])}
+funstarttijd_dualtask_hard <- function(x) {(allData[allData$SubjectNr == x &allData$scrabbleCondition=="hard"& allData$partOfExperiment == "dualTask" & allData$LengthOfUserLetterString == "0",]$CurrentTime[1])}
+
 ### Eindtijd dualtask -- easy en hard voor subject 1 
 eindtijd_dualtask_hard<-(allData[allData$SubjectNr == "1" &allData$scrabbleCondition=="hard"& allData$partOfExperiment == "dualTask" & allData$userStringLetterTask == "-10" & allData$Eventmessage2 == "OpeningLetter",]$CurrentTime[1])
 eindtijd_dualtask_easy<-(allData[allData$SubjectNr == "1" &allData$scrabbleCondition=="easy"& allData$partOfExperiment == "dualTask" & allData$userStringLetterTask == "-10" & allData$Eventmessage2 == "OpeningLetter",]$CurrentTime[1])
+
+### Functies Eindtijd dualtask -- easy en hard 
+funeindtijd_dualtask_easy <- function(x){(allData[allData$SubjectNr == x &allData$scrabbleCondition=="hard"& allData$partOfExperiment == "dualTask" & allData$userStringLetterTask == "-10" & allData$Eventmessage2 == "OpeningLetter",]$CurrentTime[1])}
+funeindtijd_dualtask_hard <- function(x){(allData[allData$SubjectNr == x &allData$scrabbleCondition=="easy"& allData$partOfExperiment == "dualTask" & allData$userStringLetterTask == "-10" & allData$Eventmessage2 == "OpeningLetter",]$CurrentTime[1])}
+
 
 ### Total Time gebaseerd op vorige 
 TotalTime_hard <- eindtijd_dualtask_hard - starttijd_dualtask_hard
