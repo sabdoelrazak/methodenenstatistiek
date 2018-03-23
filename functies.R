@@ -46,7 +46,5 @@ TotalTime_hard <- eindtijd_dualtask_hard - starttijd_dualtask_hard
 TotalTime_easy <- eindtijd_dualtask_easy - starttijd_dualtask_easy
 
 
-tijdtussencorrectnewword <-
-  
-laatstecorrectnewword_easy <- 
+tijdtussencorrectnewword <- for{yey} 
 
