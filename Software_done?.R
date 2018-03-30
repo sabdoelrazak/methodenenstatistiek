@@ -406,19 +406,27 @@ teken_give_up <- function(){
   }
 }
 
+# alle data punten plot per difficulty
+par(mfrow = c(1,2))
+plot(Opgeef_frame_easy$x, Opgeef_frame_easy$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Alle easy")
+abline(lm(Opgeef_frame_easy$y ~ Opgeef_frame_easy$x))
+plot(Opgeef_frame_hard$x, Opgeef_frame_hard$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Alle hard")
+abline(lm(Opgeef_frame_hard$y ~ Opgeef_frame_hard$x))
+
+# alle data punten plot per difficulty en reward
 par(mfrow=c(2,3))
 plot(easy_1$x, easy_1$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Easy; 7")
-abline(lm(easy_1$x ~ easy_1$y))
+abline(lm(easy_1$y ~ easy_1$x))
 plot(easy_2$x, easy_2$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Easy; 14")
-abline(lm(easy_2$x ~ easy_2$y))
+abline(lm(easy_2$y ~ easy_2$x))
 plot(easy_3$x, easy_3$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Easy; 28")
-abline(lm(easy_3$x ~ easy_3$y))
+abline(lm(easy_3$y ~ easy_3$x))
 plot(hard_1$x, hard_1$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Hard; 7")
-abline(lm(hard_1$x ~ hard_1$y))
+abline(lm(hard_1$y ~ hard_1$x))
 plot(hard_2$x, hard_2$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Hard; 14")
-abline(lm(hard_2$x ~ hard_2$y))
+abline(lm(hard_2$y ~ hard_2$x))
 plot(hard_3$x, hard_3$y, xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", main = "Hard; 28")
-abline(lm(hard_3$x ~ hard_3$y))
+abline(lm(hard_3$y ~ hard_3$x))
 
 par(mfrow=c(1,2))
 plot(1, type = "n", xlab = "Aantal woorden gevonden", ylab = "Giving-up time (sec)", xlim = c(0, 35), ylim = c(0, 40), main = "Easy")
@@ -438,6 +446,7 @@ abline(lm(hard_2$y ~ hard_2$x), col = "Green")
 abline(lm(hard_3$y ~ hard_3$x), col = "Blue")
 legend("topright", legend=c("7", "14", "28"), fill = c("Hotpink", "Green", "Blue"),  cex = 1)
 ### PLOT ###
+
 
 ### TESTING ###
 #subject6 <- allData[allData$SubjectNr == "6",]
